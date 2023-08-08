@@ -26,3 +26,30 @@ const throwError = (message: string): string => {
 
   return message;
 };
+
+const todaysWeather = {
+  date: new Date(),
+  weather: 'sunny',
+};
+
+// ES2015 - Destructuring in JavaScript
+/*
+const logWeather = ({ date, weather}) => {
+  console.log(date);
+  console.log(weather);
+}
+*/
+
+// Destructuring in TypeScript
+const logWeather = ({
+  date,
+  weather,
+}: {
+  date: Date;
+  weather: string;
+}): void => {
+  console.log(date);
+  console.log(weather);
+};
+
+logWeather(todaysWeather);
